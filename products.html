@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สินค้าทั้งหมด - Mobile Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="products.html">
+    <link rel="stylesheet" href="products.js">
+    <link rel="stylesheet" href="checkout.html">
+    <link rel="stylesheet" href="checkout.js">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="logo">Mobile Store</a>
+                <div class="nav-links">
+                    <a href="index.html">หน้าแรก</a>
+                    <a href="#" class="active">สินค้าทั้งหมด</a>
+                    <a href="index.html#about">เกี่ยวกับเรา</a>
+                    <a href="index.html#contact">ติดต่อ</a>
+                </div>
+                <div class="nav-icons">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                    <button class="cart-btn" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    
+
+    <!-- Modal ตะกร้าสินค้า -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>ตะกร้าสินค้า</h2>
+            <div id="cartItems" class="cart-items">
+                <!-- รายการสินค้าในตะกร้า -->
+            </div>
+           
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Mobile Store</h3>
+                    <p>ร้านขายมือถือที่คัดสรรสินค้าคุณภาพเพื่อคุณ</p>
+                </div>
+                <div class="footer-section">
+                    <h3>ติดตามเรา</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-line"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mobile Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="products.js"></script>
+</body>
+</html>

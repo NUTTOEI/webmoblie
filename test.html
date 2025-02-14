@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Store - ร้านขายมือถือ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="script.js">
+    <link rel="stylesheet" href="checkout.html">
+    <link rel="stylesheet" href="checkout.js">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="#" class="logo">Mobile Store</a>
+                <div class="nav-links">
+                    <a href="#home">หน้าแรก</a>
+                    <a href="#products">สินค้า</a>
+                    <a href="#about">เกี่ยวกับเรา</a>
+                    <a href="#contact">ติดต่อ</a>
+                </div>
+                <div class="nav-icons">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                    <button class="cart-btn" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="container">
+                <h1>มือถือคุณภาพ ราคาดีที่สุด</h1>
+                <p>เลือกช้อปมือถือรุ่นใหม่ล่าสุด พร้อมโปรโมชั่นพิเศษ</p>
+                <a href="#products" class="cta-button">ช้อปเลย</a>
+            </div>
+        </section>
+
+        <section id="products" class="product-card">
+            <div class="container">
+                <h2>สินค้าแนะนำ</h2>
+                <div class="product-grid">
+                    <!-- สินค้าจะถูกแสดงที่นี่ -->
+                </div>
+            </div>
+        </section>
+
+       
+                    
+
+               
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2>เกี่ยวกับเรา</h2>
+                <div class="about-content">
+                    <img src="about-image.jpg" alt="เกี่ยวกับร้านค้า">
+                    <div class="about-text">
+                        <p>Mobile Store คือร้านค้าที่คัดสรรมือถือคุณภาพดี ราคาคุ้มค่า พร้อมบริการหลังการขาย</p>
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> สินค้าคุณภาพ</li>
+                            <li><i class="fas fa-check"></i> จัดส่งรวดเร็ว</li>
+                            <li><i class="fas fa-check"></i> รับประกันสินค้า</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>ติดต่อเรา</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>123 ถนนสุขุมวิท กรุงเทพฯ 10110</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <p>02-123-4567</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>contact@mobilestore.com</p>
+                        </div>
+                    </div>
+                    <form id="contactForm" class="contact-form">
+                        <input type="text" placeholder="ชื่อ" required>
+                        <input type="email" placeholder="อีเมล" required>
+                        <textarea placeholder="ข้อความ" required></textarea>
+                        <button type="submit" class="submit-btn">ส่งข้อความ</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal ตะกร้าสินค้า -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>ตะกร้าสินค้า</h2>
+            <div id="cartItems" class="cart-items">
+                <!-- รายการสินค้าในตะกร้า -->
+            </div>
+            <div class="cart-summary">
+                <div class="total">รวมทั้งหมด: <span id="cartTotal">฿0</span></div>
+                <button id="checkoutBtn" class="checkout-btn">ชำระเงิน</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Mobile Store</h3>
+                    <p>ร้านขายมือถือที่คัดสรรสินค้าคุณภาพเพื่อคุณ</p>
+                </div>
+                <div class="footer-section">
+                    <h3>ติดตามเรา</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-line"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mobile Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+    function addToCart(productId) {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const product = products.find(p => p.id === productId);
+        
+        if (product) {
+            const existingItem = cart.find(item => item.id === productId);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('เพิ่มสินค้าลงในตะกร้าเรียบร้อยแล้ว');
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        displayOrderItems();
+    });
+
+    document.getElementById('checkoutForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('ขอบคุณสำหรับการสั่งซื้อ! ระบบจะดำเนินการจัดส่งสินค้าให้ท่านในเร็วๆ นี้');
+        localStorage.removeItem('cart');
+        window.location.href = 'index.html';
+    });
+    </script>
+     <script src="script.js"></script>
+</body>
+</html>

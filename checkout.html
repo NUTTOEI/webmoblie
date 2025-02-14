@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ชำระเงิน - Mobile Phone Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.html">
+    <link rel="stylesheet" href="products.html">
+    <link rel="stylesheet" href="checkout.js">
+    <link rel="stylesheet" href="script.js">
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="logo">Mobile Phone Store</a>
+                <div class="nav-links">
+                    <a href="index.html">หน้าแรก</a>
+                    <a href="products.html">สินค้าทั้งหมด</a>
+                    <a href="index.html#about">เกี่ยวกับเรา</a>
+                    <a href="index.html#contact">ติดต่อ</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="checkout-page">
+        <div class="container">
+            <h1>ชำระเงิน</h1>
+            <div class="checkout-content">
+                <div class="product-images">
+                    <div class="order-summary">
+                        <h2>สรุปรายการสั่งซื้อ</h2>
+                        <div id="orderItems" class="order-items"></div>
+                        <div class="order-total">
+                            รวมทั้งหมด: <span id="orderTotal">฿0</span>   
+                        </div>
+                        
+                    </div>
+                </div>
+            
+                         
+                         
+                
+
+                <form id="checkoutForm" class="checkout-form">
+                    <h2>ข้อมูลการจัดส่ง</h2>
+                    <input type="text" name="name" placeholder="ชื่อ-นามสกุล" required>
+                    <input type="text" name="address" placeholder="ที่อยู่" required>
+                    <input type="text" name="city" placeholder="เมือง" required>
+                    <input type="text" name="zipCode" placeholder="รหัสไปรษณีย์" required>
+                    <input type="tel" name="phone" placeholder="เบอร์โทรศัพท์" required>
+                    <input type="email" name="email" placeholder="อีเมล" required>
+
+                    <h2>วิธีการชำระเงิน</h2>
+                    <div class="payment-methods">
+                        <label>
+                            <input type="radio" name="payment" value="credit" checked>
+                            บัตรเครดิต/เดบิต
+                        </label>
+                        <label>
+                            <input type="radio" name="payment" value="bank">
+                            โอนผ่านธนาคาร
+                        </label>
+                        <label>
+                            <input type="radio" name="payment" value="cod">
+                            เก็บเงินปลายทาง
+                        </label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">ยืนยันการสั่งซื้อ</button>
+                    <button type="cancel" class="cancel-btn">ยกเลิก</button>
+                </form>
+
+                
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Mobile Store</h3>
+                    <p>ร้านขายมือถือที่คัดสรรสินค้าคุณภาพเพื่อคุณ</p>
+                </div>
+                <div class="footer-section">
+                    <h3>ติดตามเรา</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-line"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mobile Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="checkout.js"></script>
+    
+</body>
+</html> 
